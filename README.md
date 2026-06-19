@@ -21,7 +21,7 @@ This study analyzes the water use of data centers using spatial GIS modeling and
 
 See the [pyproject.toml](pyproject.toml) file for complete package information such as project metadata and dependencies.
 
-The input data for this project is available on Zenodo: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14914472.svg)](https://doi.org/10.5281/zenodo.14914472)
+The input data for this project is available on Zenodo: [![DOI](https://zenodo.org/records/20763321)](https://doi.org/10.5281/zenodo.14914471)
 
 
 ### Problem Statement
