@@ -82,6 +82,8 @@ Choose one of the following options to run the Jupyter notebooks:
 
 The input data for this project is available on Zenodo: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14914472.svg)](https://doi.org/10.5281/zenodo.14914472)
 
+**Note on data anonymization:** To comply with proprietary data restrictions, only the input data for the last two scripts (`3_water_scarcity_assessment.ipynb` and `4_figures.ipynb`) has been provided. This ensures the anonymization of individual data center locations and specifications.
+
 ## License
 
 The code in this repository is licensed under the GNU AGPLv3 License. See the [LICENSE](LICENSE) file for details.
