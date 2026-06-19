@@ -65,8 +65,8 @@ Data centers require significant water resources for cooling systems and power g
 - Clone the repository:
 
 ```bash
-git clone https://github.com/amwientjes/<data-center-water-footprint>
-cd <data-center-water-footprint>
+git clone https://github.com/amwientjes/<data-center-water-analysis>
+cd <data-center-water-analysis>
 ```
 
 - Install project dependencies in a virtual environment using uv: `uv sync`
