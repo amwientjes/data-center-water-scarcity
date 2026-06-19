@@ -305,9 +305,9 @@ def calculate_pp_increased_ws_share(
     sensitivity_analysis: bool = True,
 ) -> gpd.GeoDataFrame:
     """Calculate the share of each power plant capacity that experiences an increase in water scarcity months."""
-    # Merge capacity with water_scarcity_summary based on name
+    # Merge capacity with water_scarcity_summary based on id
     water_scarcity_summary_grid = water_scarcity_summary.merge(
-        power_plants[["name", "capacity_mw"]], left_on="name", right_on="name", how="left"
+        power_plants[["id", "capacity_mw"]], left_on="id", right_on="id", how="left"
     )
 
     # Calculate the ratio of each grid contribution weight within a power_grid_zone
@@ -638,9 +638,9 @@ def calculate_pp_ws_share(
     sensitivity_analysis: bool = True,
 ) -> gpd.GeoDataFrame:
     """Calculate the share of each power plant capacity that experiences water scarcity months."""
-    # Merge capacity with water_scarcity_summary based on name
+    # Merge capacity with water_scarcity_summary based on id
     water_scarcity_summary_grid = water_scarcity_summary.merge(
-        power_plants[["name", "capacity_mw"]], left_on="name", right_on="name", how="left"
+        power_plants[["id", "capacity_mw"]], left_on="id", right_on="id", how="left"
     )
 
     # Calculate the ratio of each grid contribution weight within a power_grid_zone

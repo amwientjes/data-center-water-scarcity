@@ -458,7 +458,7 @@ def combine_dcs_and_pps(
     data_centers = (
         data_centers_df[
             [
-                "name",
+                "id",
                 "ISO_A3",
                 "latitude",
                 "longitude",
@@ -495,7 +495,7 @@ def combine_dcs_and_pps(
     # Select final power plant columns
     power_plants = power_plants[
         [
-            "name",
+            "id",
             "country",
             "latitude",
             "longitude",

@@ -191,7 +191,7 @@ def compute_efr(df: pd.DataFrame) -> pd.DataFrame:
     )
 
     result["mean_annual_flow"] = (
-        result.groupby(["name", "latitude", "longitude"])["mean_monthly_flow"].transform("sum") / 12
+        result.groupby(["id", "latitude", "longitude"])["mean_monthly_flow"].transform("sum") / 12
     )
 
     # Calculate Variable Monthly Flow (VMF) ratios:
