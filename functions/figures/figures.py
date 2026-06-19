@@ -399,7 +399,8 @@ def make_capacity_at_increased_risk_boxplot(
     FIGURES_DIR: Path,
     fig_name: str,
     geographical_scope: str,
-    show_error_bars=True
+    show_error_bars=True,
+    
 ):
     """
     Calculate and plot the percent of data center capacity at increased risk of water scarcity as a boxplot.
