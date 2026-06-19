@@ -1,23 +1,23 @@
-# Will the Cloud Run Dry?
-
-**Mapping the Global Water Risks of Data Centers in a Warming World**
+# Data Center Water Scarcity Analysis
 
 ## Table of Contents
 
-- [Overview](#overview)
-  - [Problem Statement](#problem-statement)
-  - [Project structure](#project-structure)
-- [Setup](#setup)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-  - [Running the notebooks](#running-the-notebooks)
-  - [Data sources](#data-sources)
-- [License](#license)
-- [Contact](#contact)
+- [Data Center Water Scarcity Analysis](#data-center-water-scarcity-analysis)
+  - [Table of Contents](#table-of-contents)
+  - [Overview](#overview)
+    - [Problem Statement](#problem-statement)
+    - [Project structure](#project-structure)
+  - [Setup](#setup)
+    - [Prerequisites](#prerequisites)
+    - [Installation](#installation)
+    - [Running the notebooks](#running-the-notebooks)
+    - [Data sources](#data-sources)
+  - [License](#license)
+  - [Contact](#contact)
 
 ## Overview
 
-This repository contains the code for the MSc Industrial Ecology thesis project by Audrey Wientjes. The project analyzes the water use of data centers using spatial GIS modeling and environmental footprinting methodologies, and assesses their impact on local water scarcity.
+This study analyzes the water use of data centers using spatial GIS modeling and environmental footprinting methodologies, and assesses their impact on local water scarcity.
 
 See the [pyproject.toml](pyproject.toml) file for complete package information such as project metadata and dependencies.
 
