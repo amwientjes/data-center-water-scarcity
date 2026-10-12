@@ -7,11 +7,13 @@
   - [Overview](#overview)
     - [Problem Statement](#problem-statement)
     - [Project structure](#project-structure)
-  - [Setup](#setup)
-    - [Prerequisites](#prerequisites)
-    - [Installation](#installation)
-    - [Running the notebooks](#running-the-notebooks)
-    - [Data sources](#data-sources)
+  - [System Requirements](#system-requirements)
+  - [Installation Guide](#installation-guide)
+  - [Demo (Quickstart)](#demo-quickstart)
+  - [Instructions for Use](#instructions-for-use)
+    - [Running on Custom Data](#running-on-custom-data)
+    - [Reproducing Paper Results](#reproducing-paper-results)
+  - [Data Sources](#data-sources)
   - [License](#license)
   - [Contact](#contact)
 
@@ -49,36 +51,65 @@ Data centers require significant water resources for cooling systems and power g
 ├── 2_energy_and_water_use_analysis.ipynb   # Energy and water use analysis notebook
 ├── 3_water_scarcity_assessment.ipynb       # Water scarcity assessment notebook
 ├── 4_figures.ipynb                         # Figures notebook
+├── demo_workflow.ipynb                     # ⚡ Standalone demo (< 5s) with simulated data
 ├── LICENSE                                 # License file
 ├── README.md                               # This file
 └── pyproject.toml                          # Project metadata and dependencies
 ```
 
-## Setup
+## System Requirements
 
-### Prerequisites
+- **Operating Systems**: Tested on macOS (Sonoma 14, Sequoia 15) and Linux (Ubuntu 22.04). Compatible with Windows 11.
+- **Python Version**: Python >= 3.13.
+- **Dependencies**: Managed via [uv](https://docs.astral.sh/uv/) and listed in [pyproject.toml](pyproject.toml) (including `geopandas >= 1.0.1`, `rasterio >= 1.4.3`, `pandas >= 2.2.3`, `numpy >= 2.2.2`, `cartopy >= 0.24.1`, `statsmodels >= 0.14.4`).
+- **Hardware Requirements**: Standard desktop or laptop computer (>= 8 GB RAM). No GPU or non-standard hardware required.
 
-- The easiest way to install the project dependencies is via [uv](https://docs.astral.sh/uv/). You can [install](https://docs.astral.sh/uv/getting-started/installation/) it using your favorite package manager.
+## Installation Guide
 
-### Installation
+1. Install `uv` (recommended package manager):
+   ```bash
+   curl -LsSf https://astral.sh/uv/install.sh | sh
+   ```
+2. Clone the repository:
+   ```bash
+   git clone https://github.com/amwientjes/<data-center-water-scarcity>
+   cd <data-center-water-scarcity>
+   ```
+3. Install dependencies in an isolated virtual environment:
+   ```bash
+   uv sync
+   ```
+- **Typical install time**: ~1–2 minutes on a standard desktop computer.
 
-- Clone the repository:
+## Demo (Quickstart)
 
-```bash
-git clone https://github.com/amwientjes/<data-center-water-analysis>
-cd <data-center-water-analysis>
-```
+A standalone minimal working example using simulated data (`data/inputs/demo/`):
 
-- Install project dependencies in a virtual environment using uv: `uv sync`
+- **How to run**:
+  - In Jupyter / VS Code: Open [demo_workflow.ipynb](demo_workflow.ipynb) and select the `.venv` kernel.
+  - From terminal:
+    ```bash
+    uv run python -m nbconvert --execute --inplace demo_workflow.ipynb
+    ```
+- **Expected run time**: < 5 seconds on a standard desktop computer.
+- **Expected output**: Formatted tabular outputs demonstrating direct/indirect water footprints, extraction site clustering, Environmental Flow Requirements (VMF method), and seasonal water scarcity indicators (confirming the tipping effect: baseline water scarcity increasing from 3 to 5 months in the arid basin).
 
-### Running the notebooks
+## Instructions for Use
 
-Choose one of the following options to run the Jupyter notebooks:
+### Running on Custom Data
+To evaluate custom facilities, provide a dataset containing:
+- `critical_power_mw`: IT power capacity (MW)
+- `latitude`, `longitude`: Geographic coordinates (WGS84)
+- `cooling_tech` / `ashrae_zone`: Cooling system configuration or ASHRAE climate zone
+- `power_grid_zone`: Regional power grid identifier
 
-- Command line: `uv run jupyter lab` to start a Jupyter Lab server.
-- [VS Code](https://code.visualstudio.com/): Open notebook and select kernel from virtual environment.
+### Reproducing Paper Results
+1. Download baseline input files from [Zenodo](https://doi.org/10.5281/zenodo.14914472) into `data/inputs/`.
+2. Launch Jupyter Lab: `uv run jupyter lab`
+3. Run [3_water_scarcity_assessment.ipynb](3_water_scarcity_assessment.ipynb) to model water extraction sites and scarcity across climate scenarios.
+4. Run [4_figures.ipynb](4_figures.ipynb) to reproduce paper figures and statistical summaries.
 
-### Data sources
+## Data Sources
 
 The input data for this project is available on Zenodo: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14914472.svg)](https://doi.org/10.5281/zenodo.14914472)
 

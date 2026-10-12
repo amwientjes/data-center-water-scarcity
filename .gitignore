@@ -5,10 +5,14 @@ __pycache__/
 .pytest_cache/
 .env
 
-# Data - exclude everything in data except figures
+# Data - exclude everything in data except figures and demo inputs
 data/*
+!data/inputs/
+data/inputs/*
+!data/inputs/demo/
 !data/outputs/
 data/outputs/*
+!data/outputs/demo/
 !data/outputs/figures/
 data.zip
 
